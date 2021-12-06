@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Tabbed panels using CSS
+    </title>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.5.16/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.5.16/modern.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="https://collabcare.s3-us-west-2.amazonaws.com/a/tabbed-panels.css">
+
+		<script>
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+			// alert('test alert header');
+		</script>
+		
+		
+  </head>
+  <body>
+    <div class="tabbed">
+      <input name="tabbed" id="tabbed1" type="radio" checked>
+      <section>
+        <h1>
+          <label for="tabbed1">Dashboard</label>
+        </h1>
+        <div>
+		  <p>New Survey:<a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001">Weekly Check-in</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1">Depression Call 1</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call2">Depression Call 2</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call3">Depression Call 3</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call4">Depression Call 4</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call5">Depression Call 5</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call6">Depression Call 6</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call7">Depression Call 7</a>
+		  </p>
+          <img src="https://collabcare.s3.us-west-2.amazonaws.com/a/dashboard-60.jpg" alt="coach dashboard">
+        </div>
+      </section>
+      <input name="tabbed" id="tabbed2" type="radio">
+      <section>
+        <h1>
+          <label for="tabbed2">Pre-Assessment</label>
+        </h1>
+        <div>
+		  <p>New Survey:<a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=pre01">Program Assessment</a></p>
+		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=pre01&a=history" title="CollaborationCare" height="800" width="1000" style="border: none;scrolling:auto"></iframe>
+        </div>
+      </section>
+      <input name="tabbed" id="tabbed2a" type="radio">
+      <section>
+        <h1>
+          <label for="tabbed2a">Call Scripts</label>
+        </h1>
+        <div>
+		  <p>New Survey:
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1">Depression Call 1</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call2">Depression Call 2</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call3">Depression Call 3</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call4">Depression Call 4</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call5">Depression Call 5</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call6">Depression Call 6</a>
+		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call7">Depression Call 7</a>
+		  </p>
+		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1&a=history" title="CollaborationCare" height="800" width="1000" style="border: none;scrolling:auto"></iframe>
+        </div>
+      </section>
+      <input name="tabbed" id="tabbed3" type="radio">
+      <section>
+        <h1>
+          <label for="tabbed3">Assessments</label>
+        </h1>
+        <div>
+		  <p>New Survey:<a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=phq9">PHQ-9</a></p>
+		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=phq9&a=history" title="CollaborationCare" height="800" width="1000" style="border: none;scrolling:auto"></iframe>
+        </div>
+      </section>
+      <input name="tabbed" id="tabbed4" type="radio">
+      <section>
+        <h1>
+          <label for="tabbed4">Check-ins</label>
+        </h1>
+        <div>
+		  <p>New Survey:<a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001">Weekly Checkin</a></p>
+		  <iframe id=checkinFrame" src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001&a=history" title="CollaborationCare" height="800" width="1000" style="border: none;scrolling:auto"></iframe>
+        </div>
+      </section>
+       <input name="tabbed" id="tabbed6" type="radio">
+      <section>
+        <h1>
+          <label for="tabbed6">History</label>
+        </h1>
+        <div>
+		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&a=history" title="CollaborationCare" height="800" width="1000" style="border: none;scrolling:auto"></iframe>
+        </div>
+      </section>
+    </div>
+<script>
+Survey
+    .StylesManager
+    .applyTheme("modern");
+
+var surveyJSON = {title:"Wellness Survey",completedHtml:"<b>Thank you for completing the wellness survey. The results will be forwarded to your care team.</b>",pages:[{name:"Patient Health Survey",elements:[{type:"html",name:"Instruction",html:"<h3>Over the last 2 weeks, how often have you been bothered by any of the following problems? Please answer the following 10 questions.</h3>"},{type:"radiogroup",name:"lowInterest",title:"In the last 2 weeks, how often have you experienced little interest or pleasure in doing things?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"depressed",title:"In the last 2 weeks, how often have you been feeling down, depressed, or hopeless?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"troubleSleeping",title:"In the last 2 weeks, have you had trouble falling or staying asleep, or sleeping too much?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"lowEnergy",title:"In the last 2 weeks, have you been feeling tired or having little energy?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"poorAppetite",title:"In the last 2 weeks, have you had poor appetite or have you been overeating?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"feelingDown",title:"In the last 2 weeks, have you been feeling bad about yourself or that you are a failure or have let yourself or your family down?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"troubleConcentrating",title:"In the last 2 weeks, have you had trouble concentrating on things, such as reading the newspaper or watching television?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"abnormalSpeakingMovinig",title:"In the last 2 weeks, have you been moving or speaking so slowly that other people could have noticed. Or the opposite, being so figety or restless that you have been moving around a lot more than usual?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"selfHurt",title:"In the last 2 weeks, have you had thoughts that you would be better off dead, or of\nhurting yourself?",isRequired:true,choices:[{value:"0",text:"Not at all"},{value:"1",text:"Several days"},{value:"2",text:"More than half the days"},{value:"3",text:"Nearly every day"}]},{type:"radiogroup",name:"degreeDifficulty",title:"If you checked off any problems, how difficult \nhave these problems made it for you to do\nyour work, take care of things at home, or get\nalong with other people?\n",choices:[{value:"0",text:"Not diffcult at all (or not applicable)"},{value:"1",text:"Somewhat difficult"},{value:"2",text:"Very difficult"},{value:"3",text:"Extremely difficult"}]}]}],showTitle:false,completeText:"Submit Wellness Survey",showPreviewBeforeComplete:"showAllQuestions"}
+
+window.survey = new Survey.Model(surveyJSON);
+
+// survey.data = { bodyAches: 3 };
+
+survey
+    .onComplete
+    .add(function (result) {
+		result.data.clientId = document.getElementById("clientId").innerHTML;
+		let dateStr = new Date().toISOString();
+		let resultJson = '{"clientId":"' + document.getElementById("clientId").innerHTML 
+			+ '","timestamp":"' + dateStr
+			+ '","clientData":' + JSON.stringify(result.data, null, 3) + "}";
+        // document.querySelector('#surveyResult').textContent = resultJson;
+		
+		
+		// post the data to AWS Lambda
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "https://ltuvw64k2d.execute-api.us-west-2.amazonaws.com/default/healthSurvey", false); // false for synchronous
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.send(resultJson);
+		if (xhr.status === 200) {
+			console.log("Success 200");
+			document.getElementById("clientId").innerHTML = document.getElementById("clientId").innerHTML + ", survey saved.";
+			console.log(xhr);
+		}
+		else {
+			console.log("Failure xhr.status");
+			document.getElementById("clientId").innerHTML = document.getElementById("clientId").innerHTML + 
+				", Code: " + xhr.status;
+			console.log(xhr);
+		}
+		
+    });
+
+$("#surveyElement").Survey({model: survey});
+			//alert('after survey render');
+
+Survey
+    .StylesManager
+    .applyTheme("modern");
+
+var surveyJSON2 = {title:"Depression: Initial Health Coach Session",pages:[{name:"intro",elements:[{type:"html",name:"question1",html:"<h4>Review PHQ 9 scores:</h4><p style='color:red;'>Note total score: 16</p><ul>\n<li>10-14 moderate depression\n<li><p style='color:red;'>15-19 moderately severe depression often treated with medications or counseling</p>\n<li>20-27 severe depression often treated with medications and counseling\n</ul>\n<br/>\nReview and confirm symptoms that are present at level more than half the days<ul><li>Feeling down, depressed, or hopeless</li><li>Feeling like a failure or have let yourself or your family down</li></ul>"},{type:"radiogroup",name:"question2",title:"Have you been having any other symptoms like these during the past 2 weeks?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"text",name:"question3",title:"If yes,can you tell me about these symptoms?"},{type:"radiogroup",name:"question4",title:"Does question 9 (thoughts that you would be better off dead, or of hurting yourself) show a suicidal indication as Several Days or more often? If so, do suicide risk assessment - next page)",choices:[{value:"item1",text:"Suicidal indication is ‘several days’ or more often"},{value:"item2",text:"Suicidal indication is less often or not present"}]}]},{name:"suicide",elements:[{type:"checkbox",name:"question5",title:"What kind of thoughts have you had?",choices:[{value:"item1",text:"Life is not worth living"},{value:"item2",text:"Chronic thoughts about one’s own death"},{value:"item3",text:"I want to end my life"},{value:"item4",text:"My family would be better off without me/I feel like a burden"}],hasOther:true},{type:"radiogroup",name:"question6",title:"Have you made any plans or considered a method you might use to harm your-self?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"checkbox",name:"question7",title:"If yes: What plans have you made?",choices:[{value:"item1",text:"Overdose "},{value:"item2",text:"Hanging"},{value:"item3",text:"Jumping"},{value:"item4",text:"Gunshot"},{value:"item5",text:"Laceration"},{value:"item6",text:"Suffocation"},{value:"item7",text:"Traffic"}],hasOther:true},{type:"radiogroup",name:"question8",title:"Assess: Does member heave means to enact plan?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"radiogroup",name:"question9",title:"There’s a difference between having a thought and acting on a thought. Do you think you might actually make an attempt to hurt yourself in the near future?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"radiogroup",name:"question10",title:"Have you ever tried to hurt yourself in the past?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"checkbox",name:"question11",title:"If yes: What have you attempted?",choices:[{value:"item1",text:"Overdose "},{value:"item2",text:"Hanging"},{value:"item3",text:"Jumping"},{value:"item4",text:"Gunshot"},{value:"item5",text:"Laceration"},{value:"item6",text:"Suffocation"},{value:"item7",text:"Traffic"}],hasOther:true},{type:"html",name:"question12",html:"<h4>If actively suicidal: terminate assessment and use the table below to devise safety plan</h4>\n\n<style>\n\t.demo {\n\t\tborder:1px solid #C0C0C0;\n\t\tborder-collapse:collapse;\n\t\tpadding:5px;\n\t}\n\t.demo th {\n\t\tborder:1px solid #C0C0C0;\n\t\tpadding:5px;\n\t\tbackground:#F0F0F0;\n\t}\n\t.demo td {\n\t\tborder:1px solid #C0C0C0;\n\t\tpadding:5px;\n\t}\n</style>\n<table class=\"demo\">\n\t<caption>Table 1</caption>\n\t<thead>\n\t<tr>\n\t\t<th>Suicide Evaluation</th>\n\t\t<th>Action</th>\n\t</tr>\n\t</thead>\n\t<tbody>\n\t<tr>\n\t\t<td>SI, no plan, no intent</td>\n\t\t<td>Contract for safety</td>\n\t</tr>\n\t<tr>\n\t\t<td>SI, +plan, no intent, no past attempt</td>\n\t\t<td>Contract for safety-refer to PCP or MHS asap</td>\n\t</tr>\n\t<tr>\n\t\t<td>SI, +plan, no intent, +past attempt</td>\n\t\t<td>Discuss need for emergency evaluation with supervisor or psychiatric consultant</td>\n\t</tr>\n\t<tr>\n\t\t<td>SI, +plan, +intent</td>\n\t\t<td>Refer for emergency evaluation </td>\n\t</tr>\n\t<tbody>\n</table>\n"}],title:"Suicide Risk Assessment"},{name:"treatment",elements:[{type:"radiogroup",name:"question14",title:"Are you currently taking medication for depression?",choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},{type:"html",name:"question13",html:"<h4>Review current treatment for depression</h4>"},{type:"multipletext",name:"question15",title:"If yes ask: What’s the name(s) of your medication(s)",items:[{name:"text1",title:"Medication 1"},{name:"text2",title:"Medication 2"}]}],title:"Current Treatment"}]}
+
+window.survey2 = new Survey.Model(surveyJSON2);
+
+// survey.data = { bodyAches: 3 };
+
+survey
+    .onComplete
+    .add(function (result) {
+		result.data.clientId = document.getElementById("clientId").innerHTML;
+		let dateStr = new Date().toISOString();
+		let resultJson = '{"clientId":"' + document.getElementById("clientId").innerHTML 
+			+ '","timestamp":"' + dateStr
+			+ '","clientData":' + JSON.stringify(result.data, null, 3) + "}";
+        // document.querySelector('#surveyResult').textContent = resultJson;
+		
+		
+		// post the data to AWS Lambda
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "https://ltuvw64k2d.execute-api.us-west-2.amazonaws.com/default/healthSurvey", false); // false for synchronous
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.send(resultJson);
+		if (xhr.status === 200) {
+			console.log("Success 200");
+			document.getElementById("clientId").innerHTML = document.getElementById("clientId").innerHTML + ", survey saved.";
+			console.log(xhr);
+		}
+		else {
+			console.log("Failure xhr.status");
+			document.getElementById("clientId").innerHTML = document.getElementById("clientId").innerHTML + 
+				", Code: " + xhr.status;
+			console.log(xhr);
+		}
+		
+    });
+
+$("#surveyElement2").Survey({model: survey2});
+			// alert('after survey render');
+
+</script>
+
+  </body>
+</html>
