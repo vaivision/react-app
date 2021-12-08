@@ -96,17 +96,17 @@ render(){
                       <td>CO</td>
                       <td>chrissybright@gmail.com</td>
                       <td>
-                      <a href="/collabCare1?name=Chrissy" className="button is-primary" target="bottom"> <strong>Dashboard</strong>
+                      <a href="/collabCare1?name=Chrissy" className="button is-primary"> <strong>Dashboard</strong>
                     </a>
-                    <a href="/preAssesment?name=Chrissy" className="button is-primary" target="bottom"> <strong>Pre-Assessment</strong>
+                    <a href="/preAssesment?name=Chrissy" className="button is-primary"> <strong>Pre-Assessment</strong>
                     </a>
-                    <a href="/callscript?name=Chrissy" className="button is-primary" target="bottom"> <strong> Call Scripts</strong>
+                    <a href="/callscript?name=Chrissy" className="button is-primary"> <strong> Call Scripts</strong>
                     </a>
-                    <a href="/assesment?name=Chrissy" className="button is-primary" target="bottom"> <strong>Assessments</strong>
+                    <a href="/assesment?name=Chrissy" className="button is-primary"> <strong>Assessments</strong>
                     </a>
-                    <a href="/checkins?name=Chrissy" className="button is-primary" target="bottom"> <strong>Check-ins</strong>
+                    <a href="/checkins?name=Chrissy" className="button is-primary"> <strong>Check-ins</strong>
                     </a>
-                    <a href="/pastDetails?name=Chrissy" className="button is-primary" target="bottom"> <strong>History</strong>
+                    <a href="/pastDetails?name=Chrissy" className="button is-primary"> <strong>History</strong>
                     </a>
                         </td>
                     </tr>
