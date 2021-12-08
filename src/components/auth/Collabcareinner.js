@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class CollabCare1 extends Component
+export default class CollabCareinner extends Component
 {
 render(){
   const iframecss = {

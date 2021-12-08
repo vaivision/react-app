@@ -11,6 +11,12 @@ import ChangePassword from './components/auth/ChangePassword';
 import ChangePasswordConfirm from './components/auth/ChangePasswordConfirm';
 import Welcome from './components/auth/Welcome';
 import Patient from './components/auth/Patient';
+import CollabCare1 from './components/auth/Collabcare1';
+import PreAssesment from './components/auth/PreAssesment';
+import Callscript from './components/auth/Callscript';
+import Assesment from './components/auth/Assesment';
+import Checkins from './components/auth/Checkins';
+import PastDetails from './components/auth/PastDetails';
 import Footer from './components/Footer';
 import { Auth } from 'aws-amplify';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -74,6 +80,12 @@ class App extends Component {
               <Route exact path="/changepasswordconfirmation" render={(props) => <ChangePasswordConfirm {...props} auth={authProps} />} />
               <Route exact path="/welcome" render={(props) => <Welcome {...props} auth={authProps} />} />
               <Route exact path="/patient" render={(props) => <Patient {...props} auth={authProps} />} />
+              <Route exact path="/collabCare1" render={(props) => <CollabCare1 {...props} auth={authProps} />} />
+              <Route exact path="/preAssesment" render={(props) => <PreAssesment {...props} auth={authProps} />} />
+              <Route exact path="/callscript" render={(props) => <Callscript {...props} auth={authProps} />} />
+              <Route exact path="/assesment" render={(props) => <Assesment {...props} auth={authProps} />} />
+              <Route exact path="/checkins" render={(props) => <Checkins {...props} auth={authProps} />} />
+              <Route exact path="/pastDetails" render={(props) => <PastDetails {...props} auth={authProps} />} />
             </Switch>
             <Footer />
           </div>

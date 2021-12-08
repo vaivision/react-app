@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Auth } from 'aws-amplify';
+
 
 export default class Patient extends Component
 {
@@ -12,7 +12,7 @@ render(){
         padding: "30px",
         fontfamily: "Arial, Helvetica, sans-serif",
         bordercollapse: "collapse",
-        width: "80%",
+        width: "95%",
         align:"center"
       };
       
@@ -67,22 +67,48 @@ render(){
                       <th style={myth}>View</th>
                     </tr>
                     <tr>
-                      <td>Donna</td>
+                      <td height="50">Donna</td>
                       <td>Peters</td>
                       <td>44</td>
                       <td>Denver</td>
                       <td>CO</td>
                       <td>dpeters121@gmail.com</td>
-                      <td><a href="https://collabcare.s3.us-west-2.amazonaws.com/test/CollabCare1.html" target="bottom">View</a></td>
+                      <td>
+                      <a href="/collabCare1?name=Donna" className="button is-primary"> <strong>Dashboard</strong>
+                    </a> 
+                    <a href="/preAssesment?name=Donna" className="button is-primary"> <strong>Pre-Assessment</strong>
+                    </a>
+                    <a href="/callscript?name=Donna" className="button is-primary"> <strong> Call Scripts</strong>
+                    </a>
+                    <a href="/assesment?name=Donna" className="button is-primary"> <strong>Assessments</strong>
+                    </a>
+                    <a href="/checkins?name=Donna" className="button is-primary"> <strong>Check-ins</strong>
+                    </a>
+                    <a href="/pastDetails?name=Donna" className="button is-primary"> <strong>History</strong>
+                    </a>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Chrissy</td>
+                      <td height="50">Chrissy</td>
                       <td>Bright</td>
                       <td>49</td>
                       <td>Monument</td>
                       <td>CO</td>
                       <td>chrissybright@gmail.com</td>
-                      <td><a href="https://collabcare.s3.us-west-2.amazonaws.com/test/CollabCare1.html" target="bottom">View</a></td>
+                      <td>
+                      <a href="/collabCare1?name=Chrissy" className="button is-primary" target="bottom"> <strong>Dashboard</strong>
+                    </a>
+                    <a href="/preAssesment?name=Chrissy" className="button is-primary" target="bottom"> <strong>Pre-Assessment</strong>
+                    </a>
+                    <a href="/callscript?name=Chrissy" className="button is-primary" target="bottom"> <strong> Call Scripts</strong>
+                    </a>
+                    <a href="/assesment?name=Chrissy" className="button is-primary" target="bottom"> <strong>Assessments</strong>
+                    </a>
+                    <a href="/checkins?name=Chrissy" className="button is-primary" target="bottom"> <strong>Check-ins</strong>
+                    </a>
+                    <a href="/pastDetails?name=Chrissy" className="button is-primary" target="bottom"> <strong>History</strong>
+                    </a>
+                        </td>
                     </tr>
                     <tr>
                       <td>Rebecca</td>
@@ -91,7 +117,7 @@ render(){
                       <td>Boulder</td>
                       <td>CO</td>
                       <td>rebhalling@gmail.com</td>
-                      <td><a href="https://collabcare.s3.us-west-2.amazonaws.com/test/CollabCare1.html" target="bottom">View</a></td>
+                      <td><a href={`https://collabcare.s3.us-west-2.amazonaws.com/test/CollabCare1.html?eid=${this.props.auth.user.username}`} target='bottom'>View</a></td>
                     </tr>
                   </tbody>
                 </table>

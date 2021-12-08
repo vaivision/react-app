@@ -14,6 +14,12 @@ export default class Navbar extends Component {
     }
   }
   render() {
+    const divalign = {
+      align:"center",
+      border:"1px",
+      width:"300px"
+   
+    }
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
@@ -34,9 +40,12 @@ export default class Navbar extends Component {
               Admin
             </a> */}
             {this.props.auth.isAuthenticated && (
+              <div className="navbar-item" style={divalign}>
                   <a href="/patient" className="navbar-item">
                     Patient
                   </a>
+              </div>
+
                 )}
           </div>
 
