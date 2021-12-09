@@ -12,7 +12,7 @@ render(){
         padding: "30px",
         fontfamily: "Arial, Helvetica, sans-serif",
         bordercollapse: "collapse",
-        width: "95%",
+        width: "80%",
         align:"center"
       };
       
@@ -74,19 +74,9 @@ render(){
                       <td>CO</td>
                       <td>dpeters121@gmail.com</td>
                       <td>
-                      <a href="/collabCare1?name=Donna" className="button is-primary"> <strong>Dashboard</strong>
+                      <a href="/collabCare1?name=Donna" className="button is-primary"> <strong>DashBoard</strong>
                     </a> 
-                    <a href="/preAssesment?name=Donna" className="button is-primary"> <strong>Pre-Assessment</strong>
-                    </a>
-                    <a href="/callscript?name=Donna" className="button is-primary"> <strong> Call Scripts</strong>
-                    </a>
-                    <a href="/assesment?name=Donna" className="button is-primary"> <strong>Assessments</strong>
-                    </a>
-                    <a href="/checkins?name=Donna" className="button is-primary"> <strong>Check-ins</strong>
-                    </a>
-                    <a href="/pastDetails?name=Donna" className="button is-primary"> <strong>History</strong>
-                    </a>
-                      </td>
+                    </td>
                     </tr>
                     <tr>
                       <td height="50">Chrissy</td>
@@ -96,17 +86,7 @@ render(){
                       <td>CO</td>
                       <td>chrissybright@gmail.com</td>
                       <td>
-                      <a href="/collabCare1?name=Chrissy" className="button is-primary"> <strong>Dashboard</strong>
-                    </a>
-                    <a href="/preAssesment?name=Chrissy" className="button is-primary"> <strong>Pre-Assessment</strong>
-                    </a>
-                    <a href="/callscript?name=Chrissy" className="button is-primary"> <strong> Call Scripts</strong>
-                    </a>
-                    <a href="/assesment?name=Chrissy" className="button is-primary"> <strong>Assessments</strong>
-                    </a>
-                    <a href="/checkins?name=Chrissy" className="button is-primary"> <strong>Check-ins</strong>
-                    </a>
-                    <a href="/pastDetails?name=Chrissy" className="button is-primary"> <strong>History</strong>
+                      <a href="/collabCare1?name=Chrissy" className="button is-primary"> <strong>DashBoard</strong>
                     </a>
                         </td>
                     </tr>
