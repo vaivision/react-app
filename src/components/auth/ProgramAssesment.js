@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-export default class PreAssesment extends Component
+export default class ProgramAssesment extends Component
 {
   componentDidMount()
   {
-    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=pre01&a=history'
+    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=pre01'
     
 
     const iframename = document.getElementById('bottom').contentDocument;
@@ -71,7 +71,7 @@ render(){
                   <hr/>
 		  <p><center><strong>{name} New Survey:</strong></center><p/>
       
-      <center><a href={"/programAssesment?name="+name} className="button is-primary">Program Assessment</a></center></p>
+      <center><a href={"/programAssesment?name="+name}  className="button is-primary">Program Assessment</a></center></p>
 		  <iframe src="" title="CollaborationCare" height="800" width="1000" name="bottom" id="bottom" style={iframecss}></iframe>
         
                    </div> 

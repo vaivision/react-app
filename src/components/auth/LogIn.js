@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
 import { Auth } from "aws-amplify";
+import authToken from './authToken';
+import authService from './AuthService';
 
 class LogIn extends Component {
+  
   state = {
     username: "",
     password: "",
@@ -41,6 +44,17 @@ class LogIn extends Component {
       this.props.auth.setAuthStatus(true);
       this.props.auth.setUser(user);
       this.props.history.push("/patient");
+      Auth.currentSession().then(res=>{
+        let accessToken = res.getIdToken()
+        let jwt = accessToken.getJwtToken()
+        //You can print them to see the full objects
+        console.log(`myAccessToken: ${JSON.stringify(accessToken)}`)
+        console.log(`myJwt: ${jwt}`)
+        authToken.someProp = jwt;
+        authService.setUserSession(user,jwt);
+        console.log(sessionStorage.getItem('token'));
+        console.log(authToken.someProp);
+      })
     }catch(error) {
       let err = null;
       !error.message ? err = { "message": error } : err = error;

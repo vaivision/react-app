@@ -17,6 +17,15 @@ import Callscript from './components/auth/Callscript';
 import Assesment from './components/auth/Assesment';
 import Checkins from './components/auth/Checkins';
 import PastDetails from './components/auth/PastDetails';
+import DepressionCall1 from './components/auth/DepressionCall1';
+import DepressionCall2 from './components/auth/DepressionCall2';
+import DepressionCall3 from './components/auth/DepressionCall3';
+import DepressionCall4 from './components/auth/DepressionCall4';
+import DepressionCall5 from './components/auth/DepressionCall5';
+import DepressionCall6 from './components/auth/DepressionCall6';
+import DepressionCall7 from './components/auth/DepressionCall7';
+import WeeklyCheckin from './components/auth/WeeklyCheckin';
+import ProgramAssesment from './components/auth/ProgramAssesment';
 import Footer from './components/Footer';
 import { Auth } from 'aws-amplify';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -57,11 +66,18 @@ class App extends Component {
   }
 
   render() {
+
+
+
     const authProps = {
       isAuthenticated: this.state.isAuthenticated,
       user: this.state.user,
       setAuthStatus: this.setAuthStatus,
       setUser: this.setUser
+    }
+
+    const divempty = {
+      height:"30px",
     }
     return (
       !this.state.isAuthenticating &&
@@ -86,7 +102,18 @@ class App extends Component {
               <Route exact path="/assesment" render={(props) => <Assesment {...props} auth={authProps} />} />
               <Route exact path="/checkins" render={(props) => <Checkins {...props} auth={authProps} />} />
               <Route exact path="/pastDetails" render={(props) => <PastDetails {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall1" render={(props) => <DepressionCall1 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall2" render={(props) => <DepressionCall2 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall3" render={(props) => <DepressionCall3 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall4" render={(props) => <DepressionCall4 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall5" render={(props) => <DepressionCall5 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall6" render={(props) => <DepressionCall6 {...props} auth={authProps} />} />
+              <Route exact path="/depressionCall7" render={(props) => <DepressionCall7 {...props} auth={authProps} />} />
+              <Route exact path="/weeklyCheckin" render={(props) => <WeeklyCheckin {...props} auth={authProps} />} />
+              <Route exact path="/programAssesment" render={(props) => <ProgramAssesment {...props} auth={authProps} />} />
+              
             </Switch>
+            <div style={divempty}></div>
             <Footer />
           </div>
         </Router>
