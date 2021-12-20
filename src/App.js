@@ -26,6 +26,15 @@ import DepressionCall6 from './components/auth/DepressionCall6';
 import DepressionCall7 from './components/auth/DepressionCall7';
 import WeeklyCheckin from './components/auth/WeeklyCheckin';
 import ProgramAssesment from './components/auth/ProgramAssesment';
+import CallScriptDepre1 from './components/auth/CallScriptDepre1';
+import CallScriptDepre2 from './components/auth/CallScriptDepre2';
+import CallScriptDepre3 from './components/auth/CallScriptDepre3';
+import CallScriptDepre4 from './components/auth/CallScriptDepre4';
+import CallScriptDepre5 from './components/auth/CallScriptDepre5';
+import CallScriptDepre6 from './components/auth/CallScriptDepre6';
+import CallScriptDepre7 from './components/auth/CallScriptDepre7';
+import NewAssesment from './components/auth/NewAssesment';
+import NewCheckins from './components/auth/NewCheckins';
 import Footer from './components/Footer';
 import { Auth } from 'aws-amplify';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -111,6 +120,15 @@ class App extends Component {
               <Route exact path="/depressionCall7" render={(props) => <DepressionCall7 {...props} auth={authProps} />} />
               <Route exact path="/weeklyCheckin" render={(props) => <WeeklyCheckin {...props} auth={authProps} />} />
               <Route exact path="/programAssesment" render={(props) => <ProgramAssesment {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre1" render={(props) => <CallScriptDepre1 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre2" render={(props) => <CallScriptDepre2 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre3" render={(props) => <CallScriptDepre3 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre4" render={(props) => <CallScriptDepre4 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre5" render={(props) => <CallScriptDepre5 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre6" render={(props) => <CallScriptDepre6 {...props} auth={authProps} />} />
+              <Route exact path="/callScriptDepre7" render={(props) => <CallScriptDepre7 {...props} auth={authProps} />} />
+              <Route exact path="/newAssesment" render={(props) => <NewAssesment {...props} auth={authProps} />} />
+              <Route exact path="/newCheckins" render={(props) => <NewCheckins {...props} auth={authProps} />} />
               
             </Switch>
             <div style={divempty}></div>

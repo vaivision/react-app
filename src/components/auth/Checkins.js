@@ -1,9 +1,32 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Checkins extends Component
 {
+  componentDidMount()
+  {
+    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001&a=history'
+
+    const iframename = document.getElementById('bottom').contentDocument;
+    
+    console.log(sessionStorage.getItem('token'));
+
+     
+          axios.get(url, {
+            headers: {
+              "Authorization": sessionStorage.getItem('token'),
+            }
+          })
+          .then((response) => {
+           iframename.write(response.data);
+            //console.log(response.data);
+            //document.getElementById('bottom').innerTest = "response.data";  
+          })
+          .catch((error) => {})
+   
+  }
 render(){
-  
+
   const queryParams = new URLSearchParams(window.location.search);
 
   const name = queryParams.get('name');
@@ -46,8 +69,8 @@ render(){
                     <hr/>
 		  <p><center><strong>{name} New Survey:</strong></center><p/>
       
-      <center><a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001" target="bottom"  className="button is-primary">Program Assessment</a></center></p>
-		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001&a=history" title="CollaborationCare" height="800" width="1000" name="bottom"  style={iframecss}></iframe>
+      <center><a href={"/newCheckins?name="+name}  className="button is-primary">Program Assessment</a></center></p>
+		  <iframe src="" title="CollaborationCare" height="800" width="1000" name="bottom" id="bottom" style={iframecss}></iframe>
         
                    </div> 
                    

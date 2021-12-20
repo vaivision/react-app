@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+
 
 export default class Callscript extends Component
 {
+
+  componentDidMount()
+  {
+    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1&a=history'
+
+    const iframename = document.getElementById('bottom').contentDocument;
+    
+    console.log(sessionStorage.getItem('token'));
+
+     
+          axios.get(url, {
+            headers: {
+              "Authorization": sessionStorage.getItem('token'),
+            }
+          })
+          .then((response) => {
+           iframename.write(response.data);
+            //console.log(response.data);
+            //document.getElementById('bottom').innerTest = "response.data";  
+          })
+          .catch((error) => {})
+   
+  }
+
 render(){
   
   const queryParams = new URLSearchParams(window.location.search);
@@ -47,15 +73,16 @@ render(){
                     <hr/>
 		  <p><center><strong>{name} New Survey:</strong></center><p/>
       <center>
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1" target="bottom" className="button is-primary">Depression Call 1</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call2" target="bottom" className="button is-primary">Depression Call 2</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call3" target="bottom" className="button is-primary">Depression Call 3</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call4" target="bottom" className="button is-primary">Depression Call 4</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call5" target="bottom" className="button is-primary">Depression Call 5</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call6" target="bottom" className="button is-primary">Depression Call 6</a>&emsp;
-		  <a href="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call7" target="bottom" className="button is-primary">Depression Call 7</a></center>
+      <a href={"/callScript?name="+name} className="button is-light">Depression Call 1</a>&emsp;
+      <a href={"/callScriptDepre2?name="+name}   className="button is-primary">Depression Call 2</a>&emsp;
+      <a href={"/callScriptDepre3?name="+name}   className="button is-primary">Depression Call 3</a>&emsp;
+      <a href={"/callScriptDepre4?name="+name}   className="button is-primary">Depression Call 4</a>&emsp;
+      <a href={"/callScriptDepre5?name="+name}   className="button is-primary">Depression Call 5</a>&emsp;
+      <a href={"/callScriptDepre6?name="+name}   className="button is-primary">Depression Call 6</a>&emsp;
+      <a href={"/callScriptDepre7?name="+name}   className="button is-primary">Depression Call 7</a>
+      </center>
 		  </p>
-		  <iframe src="https://brr6c7zj3m.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1&a=history" title="CollaborationCare" height="800" width="1000"  name="bottom"  style={iframecss}></iframe>
+		  <iframe src="" title="CollaborationCare" height="800" width="1000" id="bottom" name="bottom"  style={iframecss}></iframe>
         
         
                    </div> 
