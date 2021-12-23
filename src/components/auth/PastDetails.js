@@ -10,19 +10,19 @@ export default class PastDetails extends Component
     const iframename = document.getElementById('bottom').contentDocument;
     
     console.log(sessionStorage.getItem('token'));
+
      
-          axios.get(url,{
+          axios.get(url, {
             headers: {
               "Authorization": sessionStorage.getItem('token'),
             }
           })
           .then((response) => {
            iframename.write(response.data);
-            //console.log(response.data);
+            console.log(response.data);
             //document.getElementById('bottom').innerTest = "response.data";  
           })
           .catch((error) => {})
-   
   }
 
 render(){
@@ -71,7 +71,7 @@ render(){
       <p/><center><strong>{name} History</strong></center><p/>
       
  <iframe src="" title="CollaborationCare" name="bottom"  id="bottom" style={iframecss}></iframe> 
-                  
+                  <div id="test"></div>
                    </div> 
                    
                 )}

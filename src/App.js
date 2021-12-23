@@ -35,6 +35,7 @@ import CallScriptDepre6 from './components/auth/CallScriptDepre6';
 import CallScriptDepre7 from './components/auth/CallScriptDepre7';
 import NewAssesment from './components/auth/NewAssesment';
 import NewCheckins from './components/auth/NewCheckins';
+import HistoryDetails from './components/auth/HistoryDetails';
 import Footer from './components/Footer';
 import { Auth } from 'aws-amplify';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -129,7 +130,7 @@ class App extends Component {
               <Route exact path="/callScriptDepre7" render={(props) => <CallScriptDepre7 {...props} auth={authProps} />} />
               <Route exact path="/newAssesment" render={(props) => <NewAssesment {...props} auth={authProps} />} />
               <Route exact path="/newCheckins" render={(props) => <NewCheckins {...props} auth={authProps} />} />
-              
+              <Route exact path="/historyDetails" render={(props) => <HistoryDetails {...props} auth={authProps} />} />
             </Switch>
             <div style={divempty}></div>
             <Footer />

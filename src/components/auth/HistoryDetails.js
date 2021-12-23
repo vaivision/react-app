@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-export default class DepressionCall1 extends Component
+export default class HistoryDetails extends Component
 {
-    
   componentDidMount()
   {
-    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=call1'
+    const queryParams = new URLSearchParams(window.location.search);
+
+    //const name = queryParams.get('name');
+    const u = queryParams.get('u');
+    const sk = queryParams.get('sk');
+    const ts = queryParams.get('ts');
+    
+    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u='+u+'&sk='+sk+'&ts='+ts
 
     const iframename = document.getElementById('bottom').contentDocument;
     
     console.log(sessionStorage.getItem('token'));
+
      
-          axios.get(url,{
+          axios.get(url, {
             headers: {
               "Authorization": sessionStorage.getItem('token'),
             }
           })
           .then((response) => {
            iframename.write(response.data);
-            //console.log(response.data);
+            console.log(response.data);
             //document.getElementById('bottom').innerTest = "response.data";  
           })
           .catch((error) => {})
-   
   }
 
 render(){
@@ -48,15 +54,15 @@ render(){
   }
 
   return (
-    <div>
-        <div></div>
+    <div style={divalign}>
+        
                 {!this.props.auth.isAuthenticated && (
                   this.props.history.push("/login")
                 )}
                 {this.props.auth.isAuthenticated && (
                    <div style={divalign}>
                      <center>
-                     <a href={"/collabCare1?name="+name} className="button is-light"> <strong>Dashboard</strong>
+		                <a href={"/collabCare1?name="+name} className="button is-primary"> <strong>Dashboard</strong>
                     </a>&emsp;
                     <a href={"/preAssesment?name="+name} className="button is-primary"> <strong>Pre-Assessment</strong>
                     </a>&emsp;
@@ -66,29 +72,19 @@ render(){
                     </a>&emsp;
                     <a href={"/checkins?name="+name} className="button is-primary"> <strong>Check-ins</strong>
                     </a>&emsp;
-                    <a href={"/pastDetails?name="+name} className="button is-primary"> <strong>History</strong>
-                    </a>
-                    </center>
+                    <a href={"/pastDetails?name="+name} className="button is-light"> <strong>History</strong>
+                    </a></center>
                     <hr/>
-		  <p><center><strong>{name} New Survey:</strong></center><p/>
+      <p/><center><strong>{name} History</strong></center><p/>
       
-      <center>
-      <a href={"/weeklyCheckin?name="+name}  className="button is-primary">Weekly Check-in</a>&emsp;
-      <a href={"/depressionCall1?name="+name} className="button is-light">Depression Call 1</a>&emsp;
-      <a href={"/depressionCall2?name="+name}   className="button is-primary">Depression Call 2</a>&emsp;
-      <a href={"/depressionCall3?name="+name}   className="button is-primary">Depression Call 3</a>&emsp;
-      <a href={"/depressionCall4?name="+name}   className="button is-primary">Depression Call 4</a>&emsp;
-      <a href={"/depressionCall5?name="+name}   className="button is-primary">Depression Call 5</a>&emsp;
-      <a href={"/depressionCall6?name="+name}   className="button is-primary">Depression Call 6</a>&emsp;
-      <a href={"/depressionCall7?name="+name}   className="button is-primary">Depression Call 7</a>
-      </center>
-		  </p>
-          <iframe src="" style={iframecss} name="bottom" id="bottom" title="test"></iframe>
+ <iframe src="" title="CollaborationCare" name="bottom"  id="bottom" style={iframecss}></iframe> 
+                  
                    </div> 
+                   
                 )}
               </div>
   )
 }
-}
 
+}
 
