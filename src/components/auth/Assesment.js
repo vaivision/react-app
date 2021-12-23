@@ -18,9 +18,7 @@ export default class Assesment extends Component
             }
           })
           .then((response) => {
-           iframename.write(response.data);
-            //console.log(response.data);
-            //document.getElementById('bottom').innerTest = "response.data";  
+          iframename.write(response.data);
           })
           .catch((error) => {})
    

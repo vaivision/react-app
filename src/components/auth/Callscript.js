@@ -21,7 +21,7 @@ export default class Callscript extends Component
           })
           .then((response) => {
            iframename.write(response.data);
-            //console.log(response.data);
+            console.log(response.data);
             //document.getElementById('bottom').innerTest = "response.data";  
           })
           .catch((error) => {})
