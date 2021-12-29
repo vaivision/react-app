@@ -13,13 +13,14 @@ render(){
         fontfamily: "Arial, Helvetica, sans-serif",
         bordercollapse: "collapse",
         width: "80%",
-        align:"center"
+        margin:"auto"
       };
       
       const divalign = {
         align:"center",
         border:"1px",
-        height:"1000px"
+        height:"1000px",
+        width:"100%"
      
       }
 
@@ -51,7 +52,9 @@ render(){
 
     <div style={divalign}>
         <div style={divempty}></div>
-                {!this.props.auth.isAuthenticated && (
+               
+
+                {(!this.props.auth.isAuthenticated) && (
                   this.props.history.push("/login")
                 )}
                 {this.props.auth.isAuthenticated && (
@@ -74,7 +77,7 @@ render(){
                       <td>CO</td>
                       <td>dpeters121@gmail.com</td>
                       <td>
-                      <a href="/collabCare1?name=Donna" className="button is-primary"> <strong>DashBoard</strong>
+                      <a href="/collabCare1?name=Donna&u=1157&checksk=w001&presk=pre01&a=history" className="button is-primary"> <strong>DashBoard</strong>
                     </a> 
                     </td>
                     </tr>
