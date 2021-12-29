@@ -54,20 +54,6 @@ render(){
                 )}
                 {this.props.auth.isAuthenticated && (
                    <div style={divalign}>
-                     <center>
-                      <a href={"/collabCare1?name="+name} className="button is-primary"> <strong>Dashboard</strong>
-                    </a>&emsp;
-                    <a href={"/preAssesment?name="+name} className="button is-primary"> <strong>Pre-Assessment</strong>
-                    </a>&emsp;
-                    <a href={"/callscript?name="+name} className="button is-primary"> <strong> Call Scripts</strong>
-                    </a>&emsp;
-                    <a href={"/assesment?name="+name} className="button is-light"> <strong>Assessments</strong>
-                    </a>&emsp;
-                    <a href={"/checkins?name="+name} className="button is-primary"> <strong>Check-ins</strong>
-                    </a>&emsp;
-                    <a href={"/pastDetails?name="+name} className="button is-primary"> <strong>History</strong>
-                    </a></center>
-                    <hr/>
 		  <p><center><strong>{name} New Survey:</strong></center><p/>
       
       <center><a href={"/newAssesment?name="+name}  className="button is-light">Program Assessment</a></center></p>

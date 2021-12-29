@@ -18,19 +18,22 @@ export default class Navbar extends Component {
       align:"center",
       border:"1px",
       width:"300px"
-   
     }
 
+    
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
+      
           <a className="navbar-item" href="/">
-            <img src="hexal-logo.png" width="150" height="150" alt="hexal logo" />
+            <img src="hexal-logo.png" width="150" height="350" alt="hexal logo" />
           </a>
+          
         </div>
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
+          <div className="navbar-item" style={divalign}>
             <a href="/" className="navbar-item">
               Home
             </a>
@@ -41,13 +44,14 @@ export default class Navbar extends Component {
               Admin
             </a> */}
             {this.props.auth.isAuthenticated && (
-              <div className="navbar-item" style={divalign}>
+              
                   <a href="/patient" className="navbar-item">
                     Patient
                   </a>
-              </div>
+              
 
                 )}
+                </div>
           </div>
 
           <div className="navbar-end">

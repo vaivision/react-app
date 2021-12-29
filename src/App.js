@@ -40,6 +40,7 @@ import Footer from './components/Footer';
 import { Auth } from 'aws-amplify';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import authService from './components/auth/AuthService';
 
 library.add(faEdit);
 
@@ -58,7 +59,12 @@ class App extends Component {
   setUser = user => {
     this.setState({ user: user });
   }
+  componentWillUnmount()
+  {
+    
+    authService.resetUserSession();
 
+  }
   async componentDidMount() {
     try {
       const session = await Auth.currentSession();

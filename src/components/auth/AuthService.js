@@ -20,5 +20,16 @@ module.exports = {
     resetUserSession: function() {
       sessionStorage.removeItem('user');
       sessionStorage.removeItem('token');
-    }
+      sessionStorage.removeItem('u');
+      sessionStorage.removeItem('presk');
+      sessionStorage.removeItem('callsk');
+      sessionStorage.removeItem('a');
+    },
+    setUserDashboardSession: function(name,u,checksk,presk,a) {
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('u', u);
+      sessionStorage.setItem('checksk', checksk);
+      sessionStorage.setItem('presk', presk);
+      sessionStorage.setItem('a', a);
+      }
   }

@@ -5,9 +5,15 @@ export default class Checkins extends Component
 {
   componentDidMount()
   {
-    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001&a=history'
+    const u=sessionStorage.getItem('u');
+    const checksk=sessionStorage.getItem('checksk');
+    
+    
+    const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u='+u+'&sk='+checksk+'&a=history';
+    
+    //const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u=1157&sk=w001&a=history'
 
-    const iframename = document.getElementById('bottom').contentDocument;
+    const iframename = document.getElementById('bottom5').contentDocument;
     
     console.log(sessionStorage.getItem('token'));
 
@@ -48,34 +54,14 @@ render(){
   return (
     <div style={divalign}>
         
-                {!this.props.auth.isAuthenticated && (
-                  this.props.history.push("/login")
-                )}
-                {this.props.auth.isAuthenticated && (
-                   <div style={divalign}>
-                     <center>
-                     <a href={"/collabCare1?name="+name} className="button is-primary"> <strong>Dashboard</strong>
-                    </a>&emsp;
-                    <a href={"/preAssesment?name="+name} className="button is-primary"> <strong>Pre-Assessment</strong>
-                    </a>&emsp;
-                    <a href={"/callscript?name="+name} className="button is-primary"> <strong> Call Scripts</strong>
-                    </a>&emsp;
-                    <a href={"/assesment?name="+name} className="button is-primary"> <strong>Assessments</strong>
-                    </a>&emsp;
-                    <a href={"/checkins?name="+name} className="button is-light"> <strong>Check-ins</strong>
-                    </a>&emsp;
-                    <a href={"/pastDetails?name="+name} className="button is-primary"> <strong>History</strong>
-                    </a></center>
-                    <hr/>
-		  <p><center><strong>{name} New Survey:</strong></center><p/>
+               
       
-      <center><a href={"/newCheckins?name="+name}  className="button is-primary">Program Assessment</a></center></p>
-		  <iframe src="" title="CollaborationCare" height="800" width="1000" name="bottom" id="bottom" style={iframecss}></iframe>
+      <center><a href={"/newCheckins?name="+name}  className="button is-primary">Program Assessment</a></center>
+		  <iframe src="" title="CollaborationCare" height="800" width="1000" name="bottom5" id="bottom5" style={iframecss}></iframe>
         
                    </div> 
                    
-                )}
-              </div>
+                
   )
 }
 
