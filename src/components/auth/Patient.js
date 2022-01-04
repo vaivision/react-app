@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
-
+import axios from 'axios'
 
 export default class Patient extends Component
 {
+  constructor(props)
+    {
+      super(props)
 
+      this.state={
+        patientList1:[]
+      }
+    }
+  componentDidMount()
+  {
+    const url = 'https://9d7sfbij79.execute-api.us-west-2.amazonaws.com/default/getPatientList?coachId='+this.props.auth.user.username
+    //collabcare1'
+
+   
+    
+    console.log(sessionStorage.getItem('token'));
+
+     
+          axios.get(url, {
+            headers: {
+              "Authorization": sessionStorage.getItem('token'),
+            }
+          })
+          .then((response) => {
+            this.setState ({
+              patientList1:response.data.patientList
+            })
+             //document.getElementById('bottom').innerTest = "response.data";  
+          })
+          .catch((error) => {})
+  }
 
 render(){
-    const mytable = {
-        color: "Black",
-        //backgroundColor: "DodgerBlue",
-        padding: "30px",
-        fontfamily: "Arial, Helvetica, sans-serif",
-        bordercollapse: "collapse",
-        width: "80%",
-        margin:"auto"
-      };
-      
+ 
+
       const divalign = {
         align:"center",
         border:"1px",
@@ -36,17 +58,14 @@ render(){
         height:"5px",
       }
 
-      const myth = {
-        border: "1px solid #ddd",
-        padding: "10px",
-        paddingtop: "12px",
-        paddingbottom: "12px",
-        textalign: "left",
-        backgroundColor: "#04AA6D",
-        color: "white"
-      }
-      
+      const newpat =  this.state.patientList1;
      
+      const headerdata = ['firstName','lastName','birthDate','city','stateCode','email','view'];
+     
+      const tablewidth={
+        width:"80%"
+       
+      }
       
   return (
 
@@ -57,60 +76,49 @@ render(){
                 {(!this.props.auth.isAuthenticated) && (
                   this.props.history.push("/login")
                 )}
-                {this.props.auth.isAuthenticated && (
-                  <table align="center" style={mytable}>
-                  <tbody>
-                    <tr style={myth}>
-                      <th style={myth}>First Name</th>
-                      <th style={myth}>Last Name</th>
-                      <th style={myth}>Age</th>
-                      <th style={myth}>City</th>
-                      <th style={myth}>State</th>
-                      <th style={myth}>Email</th>
-                      <th style={myth}>View</th>
-                    </tr>
-                    <tr>
-                      <td height="50">Donna</td>
-                      <td>Peters</td>
-                      <td>44</td>
-                      <td>Denver</td>
-                      <td>CO</td>
-                      <td>dpeters121@gmail.com</td>
-                      <td>
-                      <a href="/collabCare1?name=Donna&u=1157&checksk=w001&presk=pre01&a=history" className="button is-primary"> <strong>DashBoard</strong>
-                    </a> 
+                 {this.props.auth.isAuthenticated && (
+                   <div style={divalign}>
+                     <p/><center><strong>{this.props.auth.user.username} Details</strong></center><p/>
+                     <center>
+                     <table className="app-container" style={tablewidth}>
+                        <thead>
+                        <tr>
+                        {headerdata.map((hd)=>(
+                              <th>{hd}</th>
+                            ))}
+                              </tr>
+                        </thead>
+                        <tbody>
+                            {newpat.map((num)=>(
+                              <tr>
+                              <td>{num.firstName}</td>
+                              <td>{num.lastName}</td>
+                              <td>{num.birthDate}</td>
+                              <td>{num.city}</td>
+                              <td>{num.stateCode}</td>
+                              <td>{num.email}</td>
+                              <td>
+                      
+                    
+                    <a href={'/collabCare1?name='+num.firstName+'&u=1157&checksk=w001&presk=pre01&a=history'} className="button is-primary"> <strong>DashBoard</strong></a>
                     </td>
-                    </tr>
-                    <tr>
-                      <td height="50">Chrissy</td>
-                      <td>Bright</td>
-                      <td>49</td>
-                      <td>Monument</td>
-                      <td>CO</td>
-                      <td>chrissybright@gmail.com</td>
-                      <td>
-                      <a href="/collabCare1?name=Chrissy" className="button is-primary"> <strong>DashBoard</strong>
-                    </a>
-                        </td>
-                    </tr>
-                    <tr>
-                      <td>Rebecca</td>
-                      <td>Halling</td>
-                      <td>50</td>
-                      <td>Boulder</td>
-                      <td>CO</td>
-                      <td>rebhalling@gmail.com</td>
-                      <td><a href={`https://collabcare.s3.us-west-2.amazonaws.com/test/CollabCare1.html?eid=${this.props.auth.user.username}`} target='bottom'>View</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-                )}
-                <div style={divempty}></div>
-                <iframe src="" style={iframecss} name="bottom" title="test"></iframe>
-              </div>
-
-  )
-}
+                              </tr>
+        
+                            ))}
+                        </tbody>
+                      </table>
+                      </center>
+                  
+                  
+                      <iframe src="" style={iframecss} name="bottom" title="test"></iframe>
+                              
+                              </div> 
+                              
+                            )}
+                          </div>
+              )
+            }
+                
 
 }
 
