@@ -8,7 +8,8 @@ export default class Patient extends Component
       super(props)
 
       this.state={
-        patientList1:[]
+        patientList1:[],
+        clientKey:''
       }
     }
   componentDidMount()
@@ -28,7 +29,8 @@ export default class Patient extends Component
           })
           .then((response) => {
             this.setState ({
-              patientList1:response.data.patientList
+              patientList1:response.data.patientList,
+              clientKey:response.data.clientKey
             })
              //document.getElementById('bottom').innerTest = "response.data";  
           })
@@ -60,12 +62,8 @@ render(){
 
       const newpat =  this.state.patientList1;
      
-      const headerdata = ['firstName','lastName','birthDate','city','stateCode','email','view'];
+      const headerdata = ['First Name','Last Name','Birth Date','City','State Code','Email','View'];
      
-      const tablewidth={
-        width:"80%"
-       
-      }
       
   return (
 
@@ -80,7 +78,7 @@ render(){
                    <div style={divalign}>
                      <p/><center><strong>{this.props.auth.user.username} Details</strong></center><p/>
                      <center>
-                     <table className="app-container" style={tablewidth}>
+                     <table className="app-container" id="customers">
                         <thead>
                         <tr>
                         {headerdata.map((hd)=>(
@@ -100,7 +98,7 @@ render(){
                               <td>
                       
                     
-                    <a href={'/collabCare1?name='+num.firstName+'&u=1157&checksk=w001&presk=pre01&a=history'} className="button is-primary"> <strong>DashBoard</strong></a>
+                    <a href={'/collabCare1?name='+num.firstName+'&u='+this.state.clientKey+'&checksk=w001&presk=pre01&a=history'} className="button is-primary"> <strong>DashBoard</strong></a>
                     </td>
                               </tr>
         

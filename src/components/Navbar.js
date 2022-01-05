@@ -17,21 +17,22 @@ export default class Navbar extends Component {
     const divalign = {
       align:"center",
       border:"1px",
-      width:"300px"
+      width:"300px",
+      padding:"10px"
     }
 
     
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-      
-
-            <img src="hexal-logo.png" width="200" height="350" alt="hexal logo" />
-          
+        <div className="navbar-brand" style={divalign}>
+            <img src="CollabrationCare.png" width="250" height="350" alt="hexal logo" />
         </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
+        <div id="navbarBasicExample" className="navbar-menu" style={divalign}>
           <div className="navbar-start">
+          <div className="navbar-brand" style={divalign}>
+          <img src="contact.png" width="250" height="350" alt="hexal logo" />
+          </div>
           <div className="navbar-item" style={divalign}>
             <a href="/" className="navbar-item">
               Home

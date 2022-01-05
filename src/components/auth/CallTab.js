@@ -23,7 +23,7 @@ function CallTab() {
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-          DepressionCall1
+          DepressionCall1  
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
@@ -56,9 +56,7 @@ function CallTab() {
           DepressionCall6
         </button>
         
-        <button>
-          
-        </button>
+
       </div>
 
       <div className="content-tabs">
