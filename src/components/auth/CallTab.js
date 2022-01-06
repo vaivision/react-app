@@ -20,37 +20,42 @@ function CallTab() {
     <div className="container">
       <div className="bloc-tabs">
         <button
-          className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 1 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(1)}
         >
           DepressionCall1  
         </button>
+        &nbsp;&nbsp; &nbsp;&nbsp;
         <button
-          className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 2 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(2)}
         >
           DepressionCall2
         </button>
+        &nbsp;&nbsp; &nbsp;&nbsp;
         <button
-          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 3 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(3)}
         >
           DepressionCall3
         </button>
+        &nbsp;&nbsp; &nbsp;&nbsp;
         <button
-          className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 4 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(4)}
         >
           DepressionCall4
         </button>
+        &nbsp;&nbsp; &nbsp;&nbsp;
         <button
-          className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 5 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(5)}
         >
           DepressionCall5
         </button>
+        &nbsp;&nbsp; &nbsp;&nbsp;
         <button
-          className={toggleState === 6 ? "tabs active-tabs" : "tabs"}
+          className={toggleState === 6 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(6)}
         >
           DepressionCall6
