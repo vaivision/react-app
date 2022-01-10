@@ -98,7 +98,7 @@ render(){
                               <td>
                       
                     
-                    <a href={'/collabCare1?name='+num.firstName+'&u='+this.state.clientKey+'&checksk=w001&presk=pre01&a=history'} className="button is-primary"> <strong>DashBoard</strong></a>
+                    <a href={'/collabCare1?name='+num.firstName+'&u='+num.clientId+'&checksk=w001&presk=pre01&a=history'} className="button is-primary"> <strong>DashBoard</strong></a>
                     </td>
                               </tr>
         
