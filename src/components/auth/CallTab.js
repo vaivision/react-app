@@ -19,6 +19,10 @@ function CallTab() {
   return (
     <div className="container">
       <div className="bloc-tabs">
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
         <button
           className={toggleState === 1 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(1)}

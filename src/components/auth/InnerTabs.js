@@ -18,8 +18,16 @@ function InnerTabs() {
   };
 
   return (
-    <div className="container">
+    <div className="container2">
       <div className="bloc-tabs">
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+
+
         <button
           className={toggleState === 1 ? "button is-primary" : "button is-light"}
           onClick={() => toggleTab(1)}
@@ -68,7 +76,7 @@ function InnerTabs() {
         >
           DepressionCall6
         </button>
-
+        
       </div>
 
       <div className="content-tabs">

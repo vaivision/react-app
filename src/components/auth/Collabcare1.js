@@ -31,8 +31,7 @@ render(){
   const divalign = {
     align:"center",
     border:"1px",
-    height:"1000px"
- 
+    height:"1000px",
   }
 
 
