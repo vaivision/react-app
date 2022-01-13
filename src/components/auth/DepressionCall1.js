@@ -12,8 +12,7 @@ export default class DepressionCall1 extends Component
     const url = 'https://kt1bojna1d.execute-api.us-west-2.amazonaws.com/dev/survey?u='+u+'&sk=call1';
     
     const iframename = document.getElementById('dep1').contentDocument;
-    const iframename1 = document.getElementById('dep1');
-    iframename1.scrollIntoView(false);
+
     console.log(sessionStorage.getItem('token'));
      
           axios.get(url,{

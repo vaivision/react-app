@@ -33,14 +33,14 @@ render(){
   const divalign = {
     align:"center",
     border:"1px",
-    height:"1000px"
+    height:"30500px"
  
   }
 
   const iframecss = {
     align:"center",
     border:"1px",
-    height:"100%",
+    height:"30500px",
     width:"100%"
  
   }
